@@ -63,7 +63,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "TestCopy",
+						"name": "TestCopy Data",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
