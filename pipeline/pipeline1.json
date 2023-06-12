@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "TCopy",
+				"name": "TTCopy",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
