@@ -1,5 +1,5 @@
 {
-	"name": "mygitpipeline",
+	"name": "myTestPipeline",
 	"properties": {
 		"activities": [
 			{
