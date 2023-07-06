@@ -47,10 +47,10 @@
 		"mysourcetest_connectionString": {
 			"value": ""
 		},
-		"newgithubsourcelink_connectionString": {
+		"mytargetgithublink_connectionString": {
 			"value": ""
 		},
-		"mytargetgithublink_connectionString": {
+		"newgithubsourcelink_connectionString": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {

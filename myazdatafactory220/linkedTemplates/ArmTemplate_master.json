@@ -63,13 +63,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'mysourcetest'"
 		},
-		"newgithubsourcelink_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'newgithubsourcelink'"
-		},
 		"mytargetgithublink_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'mytargetgithublink'"
+		},
+		"newgithubsourcelink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'newgithubsourcelink'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -152,11 +152,11 @@
 					"mysourcetest_connectionString": {
 						"value": "[parameters('mysourcetest_connectionString')]"
 					},
-					"newgithubsourcelink_connectionString": {
-						"value": "[parameters('newgithubsourcelink_connectionString')]"
-					},
 					"mytargetgithublink_connectionString": {
 						"value": "[parameters('mytargetgithublink_connectionString')]"
+					},
+					"newgithubsourcelink_connectionString": {
+						"value": "[parameters('newgithubsourcelink_connectionString')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"

@@ -63,13 +63,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'mysourcetest'"
 		},
-		"newgithubsourcelink_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'newgithubsourcelink'"
-		},
 		"mytargetgithublink_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'mytargetgithublink'"
+		},
+		"newgithubsourcelink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'newgithubsourcelink'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -283,19 +283,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/newgithubsourcelink')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('newgithubsourcelink_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/mytargetgithublink')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -304,6 +291,19 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('mytargetgithublink_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/newgithubsourcelink')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('newgithubsourcelink_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -391,6 +391,47 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "mytargetgithublink",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "eid",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ename",
+						"type": "varchar"
+					},
+					{
+						"name": "eage",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "esalary",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "emp"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/mytargetgithublink')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -433,61 +474,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/mysourceblob')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/mysource')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FileName": {
-						"type": "string",
-						"defaultValue": "@pipeline().parameter.sourcefile"
-					}
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "emp.csv",
-						"folderPath": {
-							"value": "dataset().filename",
-							"type": "Expression"
-						},
-						"container": "mycont"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Empno",
-						"type": "String"
-					},
-					{
-						"name": "Ename",
-						"type": "String"
-					},
-					{
-						"name": "Sal",
-						"type": "String"
-					},
-					{
-						"name": "Deptno",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
 		}
 	]
