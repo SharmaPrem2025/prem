@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=prem2020.database.windows.net;initial catalog=MyTestDB;user id=prem",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQ3M0NGRTMxLTRFOTctNDFGOC05MUI3LUI4MkRGQkFDNjg3OV9kZDJjNjFmMy1iZThjLTQ2OGMtOTcwMC0yM2ZjZDYzMTljZTciDQp9"
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=prem2020.database.windows.net;initial catalog=AdventureWorksLT;user id=prem",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDc0Q0QxMDE1LTI5MTEtNEY0RS1COEU0LTI2ODU1RDQyODA2Ql8xZjk4YWMzMi0wYmMxLTQzYmQtOGRlOC02MmRhN2I1YzRjN2EiDQp9"
 		}
 	}
 }
