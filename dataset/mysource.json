@@ -5,13 +5,23 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameter.sourcefile"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "emp.csv",
-				"container": "mycontainer"
+				"folderPath": {
+					"value": "dataset().filename",
+					"type": "Expression"
+				},
+				"container": "mycont"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -20,21 +30,22 @@
 		},
 		"schema": [
 			{
-				"name": "eid",
+				"name": "Empno",
 				"type": "String"
 			},
 			{
-				"name": " ename",
+				"name": "Ename",
 				"type": "String"
 			},
 			{
-				"name": " eage",
+				"name": "Sal",
 				"type": "String"
 			},
 			{
-				"name": " esalary",
+				"name": "Deptno",
 				"type": "String"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
