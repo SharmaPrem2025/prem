@@ -1,9 +1,0 @@
-{
-	"name": "myazfactory2029",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "ebfc17e8-2c98-4909-a0c6-20f3dee0e494",
-		"tenantId": "08086184-f514-4cad-9bd5-2939bdac53fb"
-	}
-}
