@@ -1,9 +1,0 @@
-{
-	"name": "myazdatafactory2025",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "9c6dabfc-9180-4c23-9c2f-a6543de1d815",
-		"tenantId": "08086184-f514-4cad-9bd5-2939bdac53fb"
-	}
-}
