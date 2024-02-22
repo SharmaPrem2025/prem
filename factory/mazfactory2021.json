@@ -1,9 +1,0 @@
-{
-	"name": "mazfactory2021",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "577351ce-7e25-47bb-a0a8-486195bb28b2",
-		"tenantId": "08086184-f514-4cad-9bd5-2939bdac53fb"
-	}
-}

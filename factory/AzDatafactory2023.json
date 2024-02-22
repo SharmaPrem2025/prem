@@ -1,9 +1,0 @@
-{
-	"name": "AzDatafactory2023",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "a693f883-980b-4417-8d61-ea84d0be19df",
-		"tenantId": "83f7678b-56b9-4478-bac5-65c57c040aec"
-	}
-}
